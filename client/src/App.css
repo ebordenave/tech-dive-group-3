@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,10 +20,14 @@
   color: #61dafb;
 } 
 
-.patients-table { margin: auto; min-width: 100vh; }
+.patients-table { 
+  margin: auto; 
+  min-width: 100vh;
+  padding: 0em;
+}
 
 .table-container {
-  margin: 10px;
+  margin: auto;
   padding: 0;
   border: 1px solid #e5e5e5;
   border-radius: 5px;
@@ -31,14 +35,16 @@
 
 tr.expandable > td {
   box-shadow: inset 0 3px 6px -3px rgba(0, 0, 0, .2);
-  padding: 0;
 }
 
 tr.expandable > td > .inner {
   margin: 15px;
+  min-height: fit-content;
   overflow: hidden;
 }
 
 .uk-table {
-  min-width: 100vh;
+  min-width: 100vw;
+  margin: auto;
 }
+

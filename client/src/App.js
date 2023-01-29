@@ -8,11 +8,9 @@ function App() {
   
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          {response}
-        </p>
-      </header>
+      {/* <header className="App-header"> */}
+          {console.log(response)}
+      {/* </header> */}
       <PatientsTable />
     </div>
   );

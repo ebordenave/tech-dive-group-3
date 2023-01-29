@@ -21,12 +21,12 @@ export default class PatientsTable extends React.Component {
               <table className="uk-table uk-table-hover uk-table-middle uk-table-divider">
                 <thead>
                   <tr>
-                    <th className="uk-table-shrink" />
-                    <th className="uk-table-shrink" />
-                    <th className="uk-table-shrink">Avatar</th>
+                    {/* <th className="uk-table-shrink" /> */}
+                    {/* <th className="uk-table-shrink" /> */}
+                    {/* <th className="uk-table-shrink">Avatar</th>
                     <th>Fullname</th>
                     <th>City</th>
-                    <th>Registered</th>
+                    <th>Registered</th> */}
                   </tr>
                 </thead>
                 <tbody>

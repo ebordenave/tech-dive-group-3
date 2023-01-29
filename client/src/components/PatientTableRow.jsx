@@ -40,8 +40,8 @@ export default class PatientTableRow extends React.Component {
     const { patient } = this.props;
     return [
       <tr key="main" onClick={this.toggleExpander}>
-        <td><input className="uk-checkbox" type="checkbox" /></td>
-        <td className="uk-text-nowrap">{this.props.index}.</td>
+        {/* <td><input className="uk-checkbox" type="checkbox" /></td> */}
+        {/* <td className="uk-text-nowrap">{this.props.index}.</td> */}
         <td><img className="uk-preserve-width uk-border-circle" src={patient.picture.thumbnail} width={48} alt="avatar" /></td>
         <td>{capitalize(patient.name.first + ' ' + patient.name.last)}<br /><small>{patient.email}</small></td>
         <td>{capitalize(patient.location.city)} ({patient.nat})</td>
