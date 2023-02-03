@@ -18,7 +18,7 @@ export default class PatientTableRow extends React.Component {
   state = { expanded: false }
 
   toggleExpander = (e) => {
-    if (e.target.type === 'checkbox') return;
+    // if (e.target.type === 'checkbox') return;
 
     if (!this.state.expanded) {
       this.setState(
@@ -37,39 +37,39 @@ export default class PatientTableRow extends React.Component {
   }
 
   render() {
-    const { patient } = this.props;
+    const { exam } = this.props;
     return [
       <tr key="main" onClick={this.toggleExpander}>
-        {/* <td><input className="uk-checkbox" type="checkbox" /></td> */}
-        {/* <td className="uk-text-nowrap">{this.props.index}.</td> */}
-        <td><img className="uk-preserve-width uk-border-circle" src={patient.picture.thumbnail} width={48} alt="avatar" /></td>
-        <td>{capitalize(patient.name.first + ' ' + patient.name.last)}<br /><small>{patient.email}</small></td>
-        <td>{capitalize(patient.location.city)} ({patient.nat})</td>
-        <td>{formatDate(patient.registered)}</td>
+        <td>{capitalize(exam.patientId)}</td>
+        <td>{capitalize(exam.examId)}</td>
+        <td><img src={exam.imageURL} width={48} alt="avatar" /></td>
+        <td>{exam.keyFindings}</td>
+        <td>{exam.brixiaScores}</td>
+        <td>{exam.age}</td>
+        <td>{exam.sex}</td>
+        <td>{exam.bmi}</td>
+        <td>{exam.zipCode}</td>
       </tr>,
       this.state.expanded && (
         <tr className="expandable" key="tr-expander">
-          <td className="uk-background-muted" colSpan={6}>
-            <div ref="expanderBody" className="inner uk-grid">
+          <td colSpan={6}>
+            <div ref="expanderBody" className="inner">
               <div >
-                <img  src={patient.picture.large} alt="avatar" />
+                <img  src={exam.imageURL} alt="avatar" />
               </div>
               <div >
-                <h3>{capitalize(patient.name.first + ' ' + patient.name.last)}</h3>
                 <p>
-                  Address:<br/>
+                  Info:<br/>
                   <i>
-                    {capitalize(patient.location.street)}<br/>
-                    {patient.location.postcode} {capitalize(patient.location.city)}<br/>
-                    {patient.nat}
+                    {exam.brixiaScores}<br/>
+                    {exam.age}<br/>
+                    {capitalize(exam.sex)}<br/>
+                    {exam.bmi}<br/>
+                    {exam.zipCode}
                   </i>
                 </p>
-                <p>
-                  E-mail: {patient.email}<br/>
-                  Phone: {patient.phone}
-                </p>
-                <p>Date of birth: {formatDate(patient.dob)}</p>
               </div>
+              {/* <div><button type="button">+</button></div> */}
             </div>
           </td>
         </tr>

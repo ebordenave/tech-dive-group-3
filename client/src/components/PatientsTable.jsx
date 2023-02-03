@@ -3,37 +3,48 @@ import '../App.css';
 import PatientTableRow from './PatientTableRow.jsx';
 
 export default class PatientsTable extends React.Component {
-    state = { patients: null }
+    state = { exams: null }
   
     componentDidMount() {
-      fetch('https://randomuser.me/api/1.1/?results=15')
+      fetch('https://czi-covid-lypkrzry4q-uc.a.run.app/api/exams')
         .then(response => response.json())
-        .then(data => { this.setState({patients: data.results}) });
+        .then(data => { this.setState({exams: data.exams}) });
     }
   
     render() {
-      const { patients } = this.state;
-      const isLoading = patients === null;
+      const { exams } = this.state;
+      const headings = [
+        "Patient ID", 
+        "Exam ID", 
+        "Image", 
+        "Key Findings", 
+        "Brixia Scores", 
+        "Age", 
+        "Sex", 
+        "BMI", 
+        "Zip" 
+      ];
+
+      const isLoading = exams === null;
       return (
-        <div className="patients-table">
-          <div className="table-container">
-            <div className="uk-overflow-auto">
-              <table className="uk-table uk-table-hover uk-table-middle uk-table-divider">
+        <div>
+          <div>
+            <div>
+              <table className="uk-table">
                 <thead>
                   <tr>
-                    {/* <th className="uk-table-shrink" /> */}
-                    {/* <th className="uk-table-shrink" /> */}
-                    {/* <th className="uk-table-shrink">Avatar</th>
-                    <th>Fullname</th>
-                    <th>City</th>
-                    <th>Registered</th> */}
+                    { isLoading 
+                      ? <p></p>
+                      :
+                      headings.map((h, index) => <th>{h}</th>)
+                    }
                   </tr>
                 </thead>
                 <tbody>
                   {isLoading
-                    ? <tr><td colSpan={6} className="uk-text-center"><em className="uk-text-muted">Loading...</em></td></tr>
-                    : patients.map((patient, index) =>
-                        <PatientTableRow key={index} index={index + 1} patient={patient}/>
+                    ? <h1> Loading </h1>
+                    : exams.map((exam, index) =>
+                        <PatientTableRow key={index} index={index + 1} exam={exam}/>
                       )
                   }
                 </tbody>
