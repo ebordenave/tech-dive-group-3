@@ -29,7 +29,7 @@ To run the mongodb script:
 ```bash
 cd client/db
 ```
-Modify the uri to contain your cluster <username> and <password>. You can use the mock data from the link provided by copying and pasting the "results: " array and saving them as exams. Then run  
+Modify the uri to contain your cluster username and password. You can use the mock data from the link provided by copying and pasting the "results: " array and saving them as exams. Then run  
 ```bash
 node mongodb.js 
 ```
