@@ -7,7 +7,7 @@ This skeleton contains two different applications -- a front end, or "client," c
 In order to make both of them work together, you'll need to run both, but you can run just one or the other to start. As you begin working on this project, you'll first focus on the client, so you can more or less ignore the API portion of the code for now.
 
 ## Update
-PatientTableRow and PatientsTable are now ExamTableRow and ExamsTable respoectively. 
+PatientTableRow and PatientsTable are now ExamTableRow and ExamsTable respectively. 
 ## Client
 In order to run the client, you'll run the following commands:
 
