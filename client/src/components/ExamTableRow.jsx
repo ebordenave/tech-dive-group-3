@@ -14,11 +14,10 @@ function capitalize(str) {
 }
 
 
-export default class PatientTableRow extends React.Component {
+export default class ExamTableRow extends React.Component {
   state = { expanded: false }
 
   toggleExpander = (e) => {
-    // if (e.target.type === 'checkbox') return;
 
     if (!this.state.expanded) {
       this.setState(

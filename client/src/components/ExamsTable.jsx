@@ -1,8 +1,8 @@
 import React from 'react';
 import '../App.css';
-import PatientTableRow from './PatientTableRow.jsx';
+import ExamTableRow from './ExamTableRow.jsx';
 
-export default class PatientsTable extends React.Component {
+export default class ExamsTable extends React.Component {
     state = { exams: null }
   
     componentDidMount() {
@@ -44,7 +44,7 @@ export default class PatientsTable extends React.Component {
                   {isLoading
                     ? <h1> Loading </h1>
                     : exams.map((exam, index) =>
-                        <PatientTableRow key={index} index={index + 1} exam={exam}/>
+                        <ExamTableRow key={index} index={index + 1} exam={exam}/>
                       )
                   }
                 </tbody>
