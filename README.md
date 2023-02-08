@@ -16,6 +16,7 @@ cd client/
 npm i
 npm start
 ```
+You should then be able to visit `localhost:3000` in your browser and see the client running. If you make changes in the `App.js` file, you should see them reflected.
 
 ## Components
 To inspect the components
@@ -35,9 +36,6 @@ node mongodb.js
 ```
 Note, the function calls in the main fuction will execute. 
 
-
-
-You should then be able to visit `localhost:3000` in your browser and see the client running. If you make changes in the `App.js` file, you should see them reflected.
 
 ## API
 In order to run the server, you'll run the following commands:
