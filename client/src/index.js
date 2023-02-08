@@ -3,17 +3,33 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ErrorPage from './error-page';
+import AdminPage from './routes/AdminPage';
+import NonAdminPage from './routes/NonAdminPage';
+
+import { redirect } from "react-router-dom";
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
 
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/non",
+    element: <NonAdminPage/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "admin",
+    element: <AdminPage/>,
+    errorElement: <ErrorPage/>,
   },
 ]);
 
@@ -27,4 +43,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals(console.log);

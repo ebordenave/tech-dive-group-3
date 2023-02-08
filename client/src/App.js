@@ -1,15 +1,13 @@
 import './App.css';
-import ExamsTable from './components/ExamsTable';
 import { useApi } from './hooks/use-api';
 
+import { redirect } from "react-router-dom";
 
 function App() {
   const { response } = useApi();
   
   return (
-    <div className="App">
-      <ExamsTable />
-    </div>
+    <div className="App"></div>
   );
 }
 

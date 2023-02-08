@@ -7,7 +7,8 @@ This skeleton contains two different applications -- a front end, or "client," c
 In order to make both of them work together, you'll need to run both, but you can run just one or the other to start. As you begin working on this project, you'll first focus on the client, so you can more or less ignore the API portion of the code for now.
 
 ## Update
-PatientTableRow and PatientsTable are now ExamTableRow and ExamsTable respoectively. 
+PatientTableRow and PatientsTable are now ExamTableRow and ExamsTable respectively. 
+
 ## Client
 In order to run the client, you'll run the following commands:
 
@@ -16,6 +17,8 @@ cd client/
 npm i
 npm start
 ```
+
+You should then be able to visit `localhost:3000` in your browser and see the client running. If you make changes in the `App.js` file, you should see them reflected.
 
 ## Components
 To inspect the components
@@ -29,16 +32,14 @@ To run the mongodb script:
 ```bash
 cd client/db
 ```
-Modify the uri to contain your cluster <username> and <password>. You can use the mock data from the link provided by copying and pasting the "results: " array and saving them as exams. Then run  
+Modify the uri to contain your cluster username and password. You can use the mock data from the link provided by copying and pasting the "results: " array and saving them as exams. Then run  
 ```bash
 node mongodb.js 
 ```
 Note, the function calls in the main fuction will execute. 
 
-
-
-You should then be able to visit `localhost:3000` in your browser and see the client running. If you make changes in the `App.js` file, you should see them reflected.
-
+## Routes
+This directory contains functions that call components from the Components directory. 
 ## API
 In order to run the server, you'll run the following commands:
 
