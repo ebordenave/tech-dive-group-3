@@ -1,5 +1,5 @@
 import './App.css';
-import PatientsTable from './components/PatientsTable';
+import ExamsTable from './components/ExamsTable';
 import { useApi } from './hooks/use-api';
 
 
@@ -8,10 +8,7 @@ function App() {
   
   return (
     <div className="App">
-      {/* <header className="App-header"> */}
-          {console.log(response)}
-      {/* </header> */}
-      <PatientsTable />
+      <ExamsTable />
     </div>
   );
 }
