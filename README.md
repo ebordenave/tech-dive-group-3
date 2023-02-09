@@ -51,6 +51,7 @@ Note, the function calls in the main fuction will execute.
 
 ## Routes
 This directory contains functions that call components from the Components directory. 
+Assuming you're on localhost:3000, append /admin to be redirected to the admin page, and /non to be redirected to the non-admin page. The notation can be changed later. Available routes include localhost:3000/ , localhost:3000/non , localhost:3000/admin. 
 
 
 
