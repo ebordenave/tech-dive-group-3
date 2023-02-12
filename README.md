@@ -7,7 +7,12 @@ This skeleton contains two different applications -- a front end, or "client," c
 In order to make both of them work together, you'll need to run both, but you can run just one or the other to start. As you begin working on this project, you'll first focus on the client, so you can more or less ignore the API portion of the code for now.
 
 ## Update
-PatientTableRow and PatientsTable are now ExamTableRow and ExamsTable respectively. 
+Revised the router to depend on children of App.js. View index.js and app.js. 
+Added a few components and renamed the some routes.
+If you are working on a specific component like Navbar, you can move your html content into the render() function's return of implement it how you'd like.
+I also added a modal. So when the admin clicks add, they can enter information. The layout, of the modal is currently unimplemented. It will be a form. 
+Make sure you know where things are being called and rendered. I, moses, tried to using intuitive naming so I hope that will be enough to guide you. 
+If you get a Modal undefined error, run npm i react-modal. 
 
 ## Client
 In order to run the client, you'll run the following commands:

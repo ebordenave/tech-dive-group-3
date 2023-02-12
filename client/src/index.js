@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ErrorPage from './error-page';
 import AdminPage from './routes/AdminPage';
-import NonAdminPage from './routes/NonAdminPage';
+import ExamsPage from './routes/ExamsPage';
+import ExamPage from './routes/ExamPage';
 
 import { redirect } from "react-router-dom";
 
@@ -20,16 +21,23 @@ const router = createBrowserRouter([
     path: "/",
     element: <App/>,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/non",
-    element: <NonAdminPage/>,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "admin",
-    element: <AdminPage/>,
-    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path: "non",
+        element: <ExamsPage/>,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "admin",
+        element: <AdminPage/>,
+        errorElement: <ErrorPage/>,
+      },
+      {
+        path: "exam",
+        element: <ExamPage />,
+        errorElement: <ErrorPage/>,
+      }
+    ]
   },
 ]);
 

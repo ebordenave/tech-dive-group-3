@@ -1,0 +1,3 @@
+#mainContent, #sideContent {
+    float:left; display:inline; width: 49%;
+}

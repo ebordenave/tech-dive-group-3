@@ -1,10 +1,10 @@
 const { MongoClient } = require('mongodb');
 
 const exams = []; //Mock data goes here
+const uri = "mongodb+srv://mmwaura:oQ37dOcQ6JojD11@techdive3.nyaudnt.mongodb.net/?retryWrites=true&w=majority"
+const client = new MongoClient(uri);
 
 async function main() {
-    const uri = "mongodb+srv://<username>:<password>@techdive3.nyaudnt.mongodb.net/?retryWrites=true&w=majority"
-    const client = new MongoClient(uri);
 
     try {
         await client.connect();
@@ -87,3 +87,5 @@ async function deleteAll(client) {
 
 
 main().catch(console.error)
+
+export { listDatabases, createExam, createExams, getByExam, updateExam, deleteExam }

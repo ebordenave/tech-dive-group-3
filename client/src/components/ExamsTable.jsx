@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+import './ExamsTable.css';
 import ExamTableRow from './ExamTableRow.jsx';
 
 export default class ExamsTable extends React.Component {

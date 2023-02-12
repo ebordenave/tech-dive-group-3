@@ -1,10 +1,9 @@
 import React from 'react';
-
-import { redirect } from "react-router-dom";
+import Admin from "../components/Admin";
 
 export default function AdminPage () {
 
     return (
-        <p>dkfndfkdnf</p>
+        <Admin />
     );
 }
