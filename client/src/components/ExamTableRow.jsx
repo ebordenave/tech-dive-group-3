@@ -1,6 +1,7 @@
 import React from 'react';
 import { slideDown, slideUp } from '../anim';
 import '../App.css';
+import { useNavigate } from "react-router-dom";
 
 
 function formatDate(str) {
@@ -37,6 +38,7 @@ export default class ExamTableRow extends React.Component {
 
   render() {
     const { exam } = this.props;
+  
     return [
       <tr key="main" onClick={this.toggleExpander}>
         <td>{capitalize(exam.patientId)}</td>
@@ -68,7 +70,7 @@ export default class ExamTableRow extends React.Component {
                   </i>
                 </p>
               </div>
-              {/* <div><button type="button">+</button></div> */}
+              <div><button type="button" onClick={() => console.log("exam")}>+</button></div>
             </div>
           </td>
         </tr>

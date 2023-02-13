@@ -1,13 +1,20 @@
 import './App.css';
 import { useApi } from './hooks/use-api';
 
-import { redirect } from "react-router-dom";
+import { Outlet, redirect } from "react-router-dom";
+import NavBar from './components/NavBar';
 
 function App() {
   const { response } = useApi();
   
   return (
-    <div className="App"></div>
+    <>
+    {/* all the other elements */}
+    <NavBar />
+    <div id="detail">
+      <Outlet />
+    </div>
+  </>
   );
 }
 

@@ -1,12 +1,9 @@
 import React from 'react';
 import ExamsTable from '../components/ExamsTable';
 
-import { redirect } from "react-router-dom";
-
-export default function NonAdminPage () {
-
+export default function ExamsPage () {
     return (
-        <div className = "NonAdminPage" >
+        <div className = "ExamsPage" >
             <ExamsTable />
         </div>
     );
