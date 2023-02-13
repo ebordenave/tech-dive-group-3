@@ -1,7 +1,6 @@
 const { MongoClient } = require('mongodb');
 
 const exams = []; //Mock data goes here
-const uri = "mongodb+srv://mmwaura:oQ37dOcQ6JojD11@techdive3.nyaudnt.mongodb.net/?retryWrites=true&w=majority"
 const client = new MongoClient(uri);
 
 async function main() {
