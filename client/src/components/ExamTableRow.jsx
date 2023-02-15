@@ -2,7 +2,7 @@ import React from 'react';
 import { slideDown, slideUp } from '../anim';
 import '../App.css';
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 function formatDate(str) {
   return str.substr(0, 10);
@@ -70,7 +70,9 @@ export default class ExamTableRow extends React.Component {
                   </i>
                 </p>
               </div>
-              <div><button type="button" onClick={() => console.log("exam")}>+</button></div>
+            <div>
+              <button><Link to={`exam`}>Exam</Link></button>
+            </div>
             </div>
           </td>
         </tr>

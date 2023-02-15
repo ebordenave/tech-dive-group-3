@@ -1,6 +1,7 @@
 import React from 'react';
-// import { createExam } from '../db/mongodb.js';
 import Modal from 'react-modal';
+import Form from './Form';
+import { useApi } from '../hooks/use-api';
 
 const customStyles = {
     content: {
@@ -14,7 +15,6 @@ const customStyles = {
 };
 
 Modal.setAppElement(document.createElement('div'));
-
 
 export default function AdminController() {
     let subtitle;
@@ -32,6 +32,30 @@ export default function AdminController() {
         setIsOpen(false);
     }
 
+    function handleCreateClick() {
+        fetch('', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: {
+                "exam": {
+                    "patientId": "AAA",
+                    "age": 5656,
+                    "sex": "F",
+                    "zipCode": "720",
+                    "bmi": 56.46,
+                    "__v": 0,
+                    "examId": "Exam-2",
+                    "keyFindings": "verv",
+                    "brixiaScores": "jhvbhj",
+                    "imageURL": "https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/COVID-19-AR-16424082_XR_CHEST_AP_PORTABLE_2.png"
+                }
+            }
+        }).then(response => response.json()).then(response => console.log(JSON.stringify(response)))
+    }
+
     return (
         <div className='AdminController'>
             <button class="trigger" onClick={openModal}>Add</button>
@@ -42,16 +66,7 @@ export default function AdminController() {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                    <input />
-                    <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
-                </form>
+                <button onClick={handleCreateClick()}>Create</button>
             </Modal>
             <button>Edit</button>
             <button>View</button>
