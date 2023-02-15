@@ -41,13 +41,15 @@ async function handleCreateClick() {
 }
 
 const CreateModal = ({ closeFn = () => null, open = false }) => {
-  console.log("Create modal was hit");
   return (
-    <Modal open={open}>
+    <Modal 
+      isOpen={open}
+      onRequestClose={closeFn}
+    >
       <div className="modal--mask">
         <div className="modal-window">
           <header className="modal--header">
-            <h1>Modal One</h1>
+            <h1>Modal Create</h1>
           </header>
           <div className="modal--body">
             <p>Modal One content will be rendered here.</p>
