@@ -1,7 +1,8 @@
-const { MongoClient } = require('mongodb');
-
-const uri = 'mongodb+srv://mmwaura:oQ37dOcQ6JojD11i@techdive3.nyaudnt.mongodb.net/?retryWrites=true&w=majority';
+const dotenv = require("dotenv").config();
+const { MongoClient } = require("mongodb");
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri);
+
 
 async function listDatabases(client) {
 
