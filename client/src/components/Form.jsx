@@ -1,72 +1,82 @@
-import React from 'react'
+import React, { useReducer, useState } from 'react';
 
-export default class Form extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
+const formReducer = (state, event) => {
+    return {
+        ...state,
+        [event.name]: event.value
+    }
+}
+
+export default function Form() {
+    const [formData, setFormData] = useReducer(formReducer, {});
+    const [submitting, setSubmitting] = useState(false);
+
+    const handleSubmit = event => {
+        /*
+        fetch('/some-api', { method: form.method, body: formData });
+        */
+        event.preventDefault();
+
+        alert('You have submitted the form.');
+        setSubmitting(true);
+
+        setTimeout(() => {
+            setSubmitting(false);
+        }, 3000)
     }
 
-    handleSubmit(e) {
-        // Prevent the browser from reloading the page
-        e.preventDefault();
-
-        // Read the form data
-        const form = e.target;
-        const formData = new FormData(form);
-
-        // You can pass formData as a fetch body directly:
-        // fetch('/some-api', { method: form.method, body: formData });
-
-        // Or you can work with it as a plain object:
-        const formJson = Object.fromEntries(formData.entries());
-        console.log(formJson);
+    const handleChange = event => {
+        setFormData({
+            name: event.target.name,
+            value: event.target.value,
+        });
     }
+    return (
+        <form method="POST" onSubmit={handleSubmit}>
+            <fieldset>
+                <label>
+                    Full Name: <input name="name" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Age: <input name="age" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Sex: <input name="sex" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Zip Code: <input name="zipCode" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    BMI: <input name="bmi" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    __V: <input name="__V" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Exam Id: <input name="ExamId" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Brixia Scores: <input name="brixiaScores" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Image: <input type="file" onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Key Findings: <textarea name="keyFindings" onChange={setFormData} />
+                </label>
+                <br />
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+    );
 
-    render() {
-        return [
-            <form id="createForm" method="POST" onSubmit={this.handleSubmit}>
-                <label>
-                    Full Name: <input name="name" />
-                </label>
-                <br />
-                <label>
-                    Age: <input name="age" />
-                </label>
-                <br />
-                <label>
-                    Sex: <input name="sex" />
-                </label>
-                <br />
-                <label>
-                    Zip Code: <input name="zipCode" />
-                </label>
-                <br />
-                <label>
-                    BMI: <input name="bmi" />
-                </label>
-                <br />
-                <label>
-                    __V: <input name="__V" />
-                </label>
-                <br />
-                <label>
-                    Exam Id: <input name="ExamId" />
-                </label>
-                <br />
-                <label>
-                    Brixia Scores: <input name="brixiaScores" />
-                </label>
-                <br />
-                <label>
-                    Image: <input type="file" />
-                </label>
-                <br />
-                <label>
-                    Key Findings: <textarea name="keyFindings" />
-                </label>
-                <br />
-                <button type="submit">Submit form</button>
-            </form>
-        ];
-    }
 }
