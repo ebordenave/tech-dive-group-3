@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import Form from './Form';
 
 const customStyles = {
     content: {
@@ -52,11 +53,11 @@ const CreateModal = ({ closeFn = () => null, open = false }) => {
             <h1>Modal Create</h1>
           </header>
           <div className="modal--body">
-            <p>Modal One content will be rendered here.</p>
+            <Form />
           </div>
           <footer className="modal--footer">
             <button type="button" onClick={closeFn}>
-              Close
+              &times;
             </button>
           </footer>
         </div>
