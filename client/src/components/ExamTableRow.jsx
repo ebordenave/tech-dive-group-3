@@ -38,6 +38,11 @@ export default class ExamTableRow extends React.Component {
 
   render() {
     const { exam } = this.props;
+
+    if (!exam) {
+      console.log('Exam Table is Null')
+      return null; //returns null if exam is null or undefined
+    }
   
     return [
       <tr key="main" onClick={this.toggleExpander}>
