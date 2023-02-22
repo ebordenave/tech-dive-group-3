@@ -1,44 +1,62 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
+// Import required modules
+require('dotenv').config()
+const path = require('path');
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
+const createError = require('http-errors');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var examsRouter = require('./routes/exams');
+// Import required routes
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const examsRouter = require('./routes/exams');
 
-var app = express();
+// Create the Express application
+const app = express();
 
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Connect to MongoDB using the Mongoose library
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected!'))
+.catch((err) => console.log(`MongoDB connection error: ${err.message}`));
+
+// Use middleware to set up logging, CORS, JSON and URL encoded request bodies, and cookie parsing
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+// Set up routes for the application
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/exams', examsRouter);
 
-// catch 404 and forward to error handler
+// If no route is matched, create a 404 error and forward it to the error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// Define the error handler middleware for the application
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
+  // Set locals for the error message and error object
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+  // Render the error page
   res.status(err.status || 500);
-  // res.render('error');
   res.render({
     message: err.message,
-    error: err});
+    error: err
+  });
 });
 
+// Export the Express application
 module.exports = app;
