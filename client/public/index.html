@@ -2,15 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
+    <title>TechDive Landing Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000001" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="style.css" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -21,12 +20,42 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Hack.Diversity Tech.Dive</title>
-
   </head>
   <body>
+    <section>
+      <div class = "circle"></div>
+      <header>
+        <a href="#" class="logo"><img src="favicon.png"></a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Main</a></li>
+          <li><a href="#">Admin</a></li>
+          <li><a href="#">Detail</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>Doctor<br><span>Database</span></h2>
+          <p>A web application that allows doctors to Create, Read, Update, and Delete (CRUD) structured radiology reports as an assessment of x-ray images for exams of patients with COVID-19!
+          </p>
+            <a href="#">Sign In</a>
+        </div>
+      <div class = "imgBox">
+        <img src="favicon.png" class="Starbucks">
+      </div>
+
+      <!--
+    <ul class = "linkedin">
+        <li><a href="#"><img src="favicon.png"></a></li>
+
+
+      </ul>
+      -->
+    </section>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-     <!--
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -36,8 +65,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="../src/modal.js"></script>
   </body>
 </html>
