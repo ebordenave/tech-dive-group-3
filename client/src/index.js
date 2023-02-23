@@ -7,6 +7,7 @@ import ErrorPage from './error-page';
 import AdminPage from './routes/AdminPage';
 import ExamsPage from './routes/ExamsPage';
 import ExamPage from './routes/ExamPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { redirect } from "react-router-dom";
 
