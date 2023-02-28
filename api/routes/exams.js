@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+// const named router 
 const MongodbController = require('../controllers/mongodb-controller');
 
 router.get('/', MongodbController.getExams);
