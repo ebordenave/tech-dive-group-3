@@ -3,7 +3,7 @@ import './App.css';
 import { useApi } from './hooks/use-api';
 
 import { Outlet, redirect } from "react-router-dom";
-import NavBar from './components/NavBar';
+import NavBar2 from './components/NavBar2';
 import ModalManager from './ModalManager';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-    <NavBar />
+    <NavBar2 />
     <div id="detail" onClick={openModal}>
       <ModalManager closeFn={closeModal} modal={modalOpen} />
       <Outlet/>
