@@ -1,35 +1,23 @@
-import React, { useState } from 'react';
+// Importing necessary modules
+import React from 'react';
 import './App.css';
-import { useApi } from './hooks/use-api';
-
-import { Outlet, redirect } from "react-router-dom";
-import NavBar2 from './components/NavBar2';
-import ModalManager from './ModalManager';
+import { Outlet } from 'react-router-dom'; // Outlet component is imported from react-router-dom
+import NavBar2 from './components/NavBar2'; // NavBar2 component is imported from './components/NavBar2'
+import ExamCreate from './routes/ExamCreate'; // ExamCreate component is imported from './routes/ExamCreate'
 
 function App() {
-  const { response } = useApi();
-  
-  const [modalOpen, setModal] = useState(false)
-
-  const openModal = event => {
-    event.preventDefault()
-    const { target: { dataset: { modal }}} = event
-    if (modal) setModal(modal)
-  }
-
-  const closeModal = () => {
-    setModal('')
-  }
-
+  // App component function
   return (
     <>
-    <NavBar2 />
-    <div id="detail" onClick={openModal}>
-      <ModalManager closeFn={closeModal} modal={modalOpen} />
-      <Outlet/>
-    </div>
-  </>
+      {/* Rendering the NavBar2 component */}
+      <NavBar2 />
+      {/* Div element with id "detail" that contains the Outlet component */}
+      <div id="detail">
+        <Outlet />
+      </div>
+    </>
   );
 }
 
+// Exporting the App component as default
 export default App;

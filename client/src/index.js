@@ -1,3 +1,4 @@
+// Import necessary packages and components
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -8,16 +9,12 @@ import AdminPage from './routes/AdminPage';
 import ExamsPage from './routes/ExamsPage';
 import ExamDetails from './routes/ExamDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 import { redirect } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ExamCreate from './routes/ExamCreate';
+import ExamForm from './components/ExamForm';
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-
+// Create a browser router instance with the specified routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,11 +35,17 @@ const router = createBrowserRouter([
         path: "exam",
         element: <ExamDetails />,
         errorElement: <ErrorPage/>,
+      },
+      {
+        path: "exam-form",
+        element: <ExamForm />,
+        errorElement: <ErrorPage/>,
       }
     ]
   },
 ]);
 
+// Render the root component of the application with the router wrapped in a RouterProvider component
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -50,7 +53,8 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
+// Call the reportWebVitals function to start measuring performance in the app
+// Pass a function to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(console.log);
+ 
