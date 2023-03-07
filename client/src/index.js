@@ -13,6 +13,7 @@ import { redirect } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ExamCreate from './routes/ExamCreate';
 import ExamForm from './components/ExamForm';
+import PatientDetails from './components/PatientDetails';
 
 // Create a browser router instance with the specified routes
 const router = createBrowserRouter([
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
       {
         path: "exam-form",
         element: <ExamForm />,
+        errorElement: <ErrorPage/>,
+      },
+      {
+        path: "patient",
+        element: <PatientDetails />,
         errorElement: <ErrorPage/>,
       }
     ]
