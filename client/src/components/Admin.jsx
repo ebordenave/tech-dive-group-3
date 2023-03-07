@@ -9,7 +9,6 @@ export default class Admin extends React.Component {
     render() {
         return (
             <div>
-                
                 <Link to="/exam-form">Create New Exam</Link>
                 <ExamsTable className="SideContent"/>
             </div>
