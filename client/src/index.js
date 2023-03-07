@@ -13,11 +13,17 @@ import { redirect } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ExamCreate from './routes/ExamCreate';
 import ExamForm from './components/ExamForm';
+import LandingPage from './routes/LandingPage';
 
 // Create a browser router instance with the specified routes
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <LandingPage/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/app",
     element: <App/>,
     errorElement: <ErrorPage />,
     children: [
