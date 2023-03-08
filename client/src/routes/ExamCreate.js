@@ -1,7 +1,5 @@
 import React from 'react';
-// import { Form } from 'react-bootstrap/lib/Navbar';
-import Exam from '../components/Exam';
-import ExamForm from '../components/Form';
+import ExamForm from '../components/ExamForm';
 
 export default function ExamCreate () {
     return (
