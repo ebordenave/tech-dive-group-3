@@ -62,8 +62,7 @@ export default class ExamsTable extends React.Component {
               </thead>
               <tbody>
                 {
-                  // Render table rows for each exam
-                  exams.map((exam, index) => (
+                  exams && exams.map((exam,index) => (
                     <ExamTableRow key={index} index={index + 1} exam={exam} />
                   ))
                 }

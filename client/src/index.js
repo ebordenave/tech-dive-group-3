@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "exam-form",
-        element: <ExamForm />,
+        element: <ExamCreate/>,
         errorElement: <ErrorPage/>,
       },
       {
