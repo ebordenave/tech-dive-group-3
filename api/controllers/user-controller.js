@@ -1,8 +1,11 @@
 const getUser = async (req, res) => {
-  return res.status(200).json({
-    success: true,
-    message: 'API is working.'
-  });
+  try {
+    const user = await User.findById(userId);
+    return user;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 }
 
 module.exports = {
