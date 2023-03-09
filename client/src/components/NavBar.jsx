@@ -25,22 +25,13 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <LinkContainer to="non">
-                <Nav.Link to={`non`}>Exams</Nav.Link>
+            <LinkContainer to="exams">
+                <Nav.Link to={`exams`}>Exams</Nav.Link>
             </LinkContainer>
             <LinkContainer to="admin">
                 <Nav.Link to={`admin`}>Admin</Nav.Link>
             </LinkContainer>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>
