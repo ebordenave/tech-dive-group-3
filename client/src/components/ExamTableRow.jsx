@@ -46,7 +46,7 @@ export default class ExamTableRow extends React.Component {
   
     return [
       <tr key="main" onClick={this.toggleExpander}>
-        <td>{capitalize(exam.patientId)}</td>
+        <td>{exam.patientId}</td>
         <td>{capitalize(exam.examId)}</td>
         <td><img src={exam.imageURL} width={48} alt="avatar" /></td>
         <td>{exam.keyFindings}</td>
@@ -76,7 +76,8 @@ export default class ExamTableRow extends React.Component {
                 </p>
               </div>
             <div>
-              <button><Link to={`exam`}>Exam</Link></button>
+              {/* this doesn't work at the moment */}
+              <button><Link to={ exam.examId }>Exam</Link></button> 
             </div>
             </div>
           </td>

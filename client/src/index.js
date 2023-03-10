@@ -9,10 +9,10 @@ import AdminPage from './routes/AdminPage';
 import ExamsPage from './routes/ExamsPage';
 import ExamDetails from './routes/ExamDetails';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { redirect } from "react-router-dom";
+// import { redirect } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ExamCreate from './routes/ExamCreate';
-import ExamForm from './components/ExamForm';
+// import ExamForm from './components/ExamForm';
 import PatientDetails from './components/PatientDetails';
 import LandingPage from './routes/LandingPage';
 

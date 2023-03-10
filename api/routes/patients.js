@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const MongodbController = require('../controllers/mongodb-controller');
-const patientController = require('../controllers/patientController')
+const { default: getPatient } = require('../controllers/patientController');
 
-router.get('/', UserController.getUser);
+// GET a single patient
+router.get('/:id', getPatient);
 
-
-module.exports = router;
