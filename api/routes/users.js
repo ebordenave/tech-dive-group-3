@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const MongodbController = require('../controllers/mongodb-controller');
+const patientController = require('../controllers/patientController')
 
-const UserController = require('../controllers/user-controller');
 router.get('/', UserController.getUser);
 
 
