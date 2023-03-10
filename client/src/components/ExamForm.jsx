@@ -35,6 +35,8 @@ function ExamForm() {
       return;
     }
 
+    const examIdlower = examData.examId.toLowerCase();
+
     try {
       // send form data to the server using the fetch API
       const response = await fetch('http://localhost:9000/exams/create/', {
@@ -42,7 +44,7 @@ function ExamForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(examData),
+        body: JSON.stringify({...examData, examId:examIdlower}),
       });
 
       // log the response data to the console

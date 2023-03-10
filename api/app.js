@@ -10,7 +10,7 @@ const createError = require('http-errors');
 
 // Import required routes
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const patientsRouter = require('./routes/users');
 const examsRouter = require('./routes/exams');
 
 // Create the Express application
@@ -36,8 +36,9 @@ app.use(cookieParser());
 
 // Set up routes for the application
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/exams', examsRouter);
+app.use('/patient', patientsRouter);
+
 
 // If no route is matched, create a 404 error and forward it to the error handler
 app.use(function(req, res, next) {
