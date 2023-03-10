@@ -1,7 +1,6 @@
 import React from 'react';
 import { slideDown, slideUp } from '../anim';
 import '../App.css';
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function formatDate(str) {
@@ -46,7 +45,7 @@ export default class ExamTableRow extends React.Component {
   
     return [
       <tr key="main" onClick={this.toggleExpander}>
-        <td>{capitalize(exam.patientId)}</td>
+        <td><Link to={`http://localhost:9000/patient/{exam.patientId}`}>{exam.patientId}</Link></td>
         <td>{capitalize(exam.examId)}</td>
         <td><img src={exam.imageURL} width={48} alt="avatar" /></td>
         <td>{exam.keyFindings}</td>
@@ -76,7 +75,7 @@ export default class ExamTableRow extends React.Component {
                 </p>
               </div>
             <div>
-              <button><Link to={`exam`}>Exam</Link></button>
+              <button><Link to={`http://localhost:9000/exams/${exam.examId}`}>Exam</Link></button>
             </div>
             </div>
           </td>
