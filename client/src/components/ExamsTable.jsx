@@ -85,7 +85,7 @@ export default class ExamsTable extends React.Component {
               <tbody>
                 {
                   currentExams && currentExams.map((exam,index) => (
-                    <ExamTableRow key={index} index={startIndex + index + 1} exam={exam} onDelete={this.handleDelete} />
+                    <ExamTableRow key={index} index={startIndex + index + 1} exam={exam} onDelete={this.handleDelete} isOnAdminPage={this.props.isOnAdminPage} />
 
                   ))
                 }
