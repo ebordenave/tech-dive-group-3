@@ -83,7 +83,7 @@ function ExamForm() {
             {errorMsg && <div className="error-msg">{errorMsg}</div>}
             <br />
             <div className="form-group">
-            <h4 style={{textAlign: 'center', fontFamily: 'Arial'}}>Create Exam</h4>
+            <h4 style={{textAlign: 'center', fontFamily: 'Arial'}}>Create Exam Form</h4>
               <div className='form-field'>
                 <input type="text" name="patientId" value={examData.patientId} onChange={handleChange} placeholder={'Patient ID'}/>
               </div>
