@@ -62,8 +62,8 @@ export default class ExamsTable extends React.Component {
 
     return (
       <div>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-          <div>
+        <div>
+          <div className='ExamsTable-container'>
             <table className="uk-table">
               <thead>
                 <tr>
