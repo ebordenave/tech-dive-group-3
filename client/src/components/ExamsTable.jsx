@@ -1,12 +1,15 @@
 import React from 'react';
 import './ExamsTable.css';
 import ExamTableRow from './ExamTableRow.jsx';
+import ReactPaginate from 'react-paginate';
 
 export default class ExamsTable extends React.Component {
   // Initialize state with exams and error
   state = {
     exams: null,
     error: null,
+    currentPage: 0,
+    itemsPerPage: 10,
   };
   
   componentDidMount() {
@@ -22,8 +25,12 @@ export default class ExamsTable extends React.Component {
       });
   }
   
+  handlePageClick = (data) => {
+    this.setState({ currentPage: data.selected });
+  };
+  
   render() {
-    const { exams, error } = this.state;
+    const { exams, error, currentPage, itemsPerPage } = this.state;
 
     // Define table headings
     const headings = [
@@ -45,9 +52,17 @@ export default class ExamsTable extends React.Component {
 
     // If exams are not loaded yet, display a loading message
     const isLoading = exams === null;
+    
+    // Calculate the start and end indexes of the current page
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    
+    // Get the exams for the current page
+    const currentExams = exams && exams.slice(startIndex, endIndex);
+
     return (
       <div>
-        <div>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
           <div>
             <table className="uk-table">
               <thead>
@@ -56,23 +71,34 @@ export default class ExamsTable extends React.Component {
                     <th>Loading...</th>
                   ) : (
                     // Render table headings
-                    headings.map((h, index) => <th key={index}>{h}</th>)
+                    headings.map((h, index) => <th className="blue-header" key={index}>{h}</th>)
                   )}
                 </tr>
               </thead>
               <tbody>
                 {
-                  exams && exams.map((exam,index) => (
-                    <ExamTableRow key={index} index={index + 1} exam={exam} />
+                  currentExams && currentExams.map((exam,index) => (
+                    <ExamTableRow key={index} index={startIndex + index + 1} exam={exam} />
                   ))
                 }
               </tbody>
             </table>
           </div>
         </div>
+        {
+          exams && (
+            <ReactPaginate
+              pageCount={Math.ceil(exams.length / itemsPerPage)}
+              pageRangeDisplayed={5}
+              marginPagesDisplayed={2}
+              onPageChange={this.handlePageClick}
+              containerClassName={'pagination'}
+              subContainerClassName={'pages pagination'}
+              activeClassName={'active'}
+            />
+          )
+        }
       </div>
     );
   }
 }
-
-// Derived from https://codesandbox.io/s/collapsible-table-rows-in-react-ybb28?file=/index.js

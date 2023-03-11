@@ -12,10 +12,6 @@
     border-radius: 5px;
   }
   
-  tr.expandable > td {
-    /* box-shadow: inset 0 3px 6px -3px rgba(0, 0, 0, .2); */
-  }
-  
   tr.expandable > td > .inner {
     margin: 15px;
     min-height: fit-content;
@@ -25,4 +21,23 @@
   .uk-table {
     min-width: 100vw;
     margin: auto;
+  }
+
+  .uk-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .blue-header {
+    background-color: #46c1fa;
+    color: white;
+    height: 35px;
+    font-family: 'Roboto-light', sans-serif;
+  }
+
+  th:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  th:last-child {
+    border-top-right-radius: 10px;
   }
