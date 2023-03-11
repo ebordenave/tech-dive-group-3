@@ -12,6 +12,13 @@ export default class ExamsTable extends React.Component {
     itemsPerPage: 10,
   };
   
+
+  handleDelete = (examId) => {
+    this.setState(prevState => ({
+      exams: prevState.exams.filter(exam => exam.examId !== examId)
+    }));
+  }
+  
   componentDidMount() {
     // Fetch data from the server and set state with response data
     fetch('http://localhost:9000/exams/')
@@ -78,7 +85,8 @@ export default class ExamsTable extends React.Component {
               <tbody>
                 {
                   currentExams && currentExams.map((exam,index) => (
-                    <ExamTableRow key={index} index={startIndex + index + 1} exam={exam} />
+                    <ExamTableRow key={index} index={startIndex + index + 1} exam={exam} onDelete={this.handleDelete} />
+
                   ))
                 }
               </tbody>
