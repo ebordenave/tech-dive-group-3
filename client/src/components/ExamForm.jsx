@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ExamForm.css'
 
 function ExamForm() {
   // initialize state with all form fields as empty strings
@@ -73,114 +74,109 @@ function ExamForm() {
 
   // render the form
   return (
-    <form onSubmit={handleSubmit}>
-      {successMsg && <div className="success-msg">{successMsg}</div>}
-      {errorMsg && <div className="error-msg">{errorMsg}</div>}
-      <label>
-        Patient ID:
-        <br />
-        <input
-          type="text"
-          name="patientId"
-          value={examData.patientId}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Age:
-        <br />
-        <input
-          type="number"
-          name="age"
-          value={examData.age}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Sex:
-        <br />
-        <select
-          name="sex"
-          value={examData.sex}
-          onChange={handleChange}
-        >
-          <option value="">Select sex</option>
-          <option value="M">Male</option>
-          <option value="F">Female</option>
-          <option value="Other">Other</option>
-        </select>
-      </label>
-      <br />
-      <label>
-        Zip Code:
-        <br />
-        <input
-          type="text"
-          name="zipCode"
-          value={examData.zipCode}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        BMI :
-        <br />
-        <input
-          type="number"
-          name="bmi"
-          value={examData.bmi}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Exam ID:
-        <br />
-        <input
-          type="text"
-          name="examId"
-          value={examData.examId}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Key Findings:
-        <br />
-        <textarea
-          name="keyFindings"
-          value={examData.keyFindings}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Brixia Scores:
-        <br />
-        <input
-          type="text"
-          name="brixiaScores"
-          value={examData.brixiaScores}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <label>
-        Image URL:
-        <br />
-        <input
-          type="text"
-          name="imageURL"
-          value={examData.imageURL}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <div id='form-container'>
+        <div id='div-bg'></div>
+        <div id='form-section'>
+          <form onSubmit={handleSubmit}>
+            {successMsg && <div className="success-msg">{successMsg}</div>}
+            {errorMsg && <div className="error-msg">{errorMsg}</div>}
+            <br />
+            <div className="form-group">
+            <h4 style={{textAlign: 'center', fontFamily: 'Arial'}}>Create Exam</h4>
+              <div className='form-field'>
+                <input type="text" name="patientId" value={examData.patientId} onChange={handleChange} placeholder={'Patient ID'}/>
+              </div>
+              <br />
+              <div className='form-field'>
+                <input
+                  type="number"
+                  name="age"
+                  value={examData.age}
+                  onChange={handleChange}
+                  placeholder={'Age'}
+                />
+              </div>
+              <br />
+              <select
+                name="sex"
+                value={examData.sex}
+                onChange={handleChange}
+              >
+                <option value="">Select sex</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="Other">Other</option>
+              </select>
+              <br />
+              <br />
+              <div className='form-field'>
+              <input
+                type="text"
+                name="zipCode"
+                value={examData.zipCode}
+                onChange={handleChange}
+                placeholder={'Zip Code'}
+              />
+              </div>
+              <br />
+              <div className='form-field'>
+              <input
+                type="number"
+                name="bmi"
+                value={examData.bmi}
+                onChange={handleChange}
+                placeholder={'Body Mass Index'}
+              />
+              </div>
+              <br />
+              <div className='form-field'>
+              <input
+                type="text"
+                name="examId"
+                value={examData.examId}
+                onChange={handleChange}
+                placeholder={'Exam ID'}
+              />
+              </div>
+              <br />
+              <textarea
+                name="keyFindings"
+                value={examData.keyFindings}
+                onChange={handleChange}
+                placeholder={'Key Findings'}
+                style={{ height: '45px', width: '205px' }}
+              />
+              <br />
+              <br />
+              <div className='form-field'>
+              <input
+                type="text"
+                name="brixiaScores"
+                value={examData.brixiaScores}
+                onChange={handleChange}
+                placeholder={'Brixia Scores'}
+              />
+              </div>
+              <br />
+              <div className='form-field'>
+              <input
+                type="text"
+                name="imageURL"
+                value={examData.imageURL}
+                onChange={handleChange}
+                placeholder={'Image URL'}
+              />
+              </div>
+              <br />
+              <button class="bg-primary text-white" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
+  
 
 export default ExamForm;
