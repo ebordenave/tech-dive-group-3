@@ -7,6 +7,6 @@ router.get('/', MongodbController.getExams);
 router.post('/create', MongodbController.createExam);
 router.get('/:examid', MongodbController.getByExam);
 router.put('/:exam', MongodbController.updateExam);
-router.delete('/:exam', MongodbController.deleteExam);
+router.delete('/:examid', MongodbController.deleteExam);
 
 module.exports = router;

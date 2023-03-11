@@ -44,7 +44,7 @@ export default class ExamTableRow extends React.Component {
     }
   
     return [
-      <tr key="main" onClick={this.toggleExpander}>
+      <tr key="main" >
         <td><Link to={`http://localhost:9000/patient/${exam.patientId}`}>{exam.patientId}</Link></td>
         <td><Link to={`http://localhost:9000/exams/${exam.examId}`}>{exam.examId}</Link></td>
         <td><img src={exam.imageURL} width={48} alt="avatar" /></td>
