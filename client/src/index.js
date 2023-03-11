@@ -13,7 +13,7 @@ import { redirect } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ExamCreate from './routes/ExamCreate';
 import ExamForm from './components/ExamForm';
-import PatientDetails from './components/PatientDetails';
+import PatientDetailsTable from './components/PatientDetailsTable';
 import LandingPage from './routes/LandingPage';
 
 // Create a browser router instance with the specified routes
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "patient",
-        element: <PatientDetails />,
+        element: <PatientDetailsTable />,
         errorElement: <ErrorPage/>,
       }
     ]

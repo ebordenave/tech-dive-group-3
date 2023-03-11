@@ -1,8 +1,8 @@
 import React from 'react';
-import PatientDetails from '../components/PatientDetails';
+import PatientDetailsTable from '../components/PatientDetailsTable';
 
 export default function PatientDetails () {
     return (
-        <PatientDetails />
+        <PatientDetailsTable />
     );
 }

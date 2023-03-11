@@ -46,7 +46,7 @@ export default class ExamTableRow extends React.Component {
     return [
       <tr key="main" onClick={this.toggleExpander}>
         <td><Link to={`http://localhost:9000/patient/${exam.patientId}`}>{exam.patientId}</Link></td>
-        <td>{capitalize(exam.examId)}</td>
+        <td><Link to={`http://localhost:9000/exams/${exam.examId}`}>{exam.examId}</Link></td>
         <td><img src={exam.imageURL} width={48} alt="avatar" /></td>
         <td>{exam.keyFindings}</td>
         <td>{exam.brixiaScores}</td>
@@ -60,7 +60,7 @@ export default class ExamTableRow extends React.Component {
           <td colSpan={6}>
             <div ref="expanderBody" className="inner">
               <div >
-                <img  src={exam.imageURL} alt="avatar" />
+              <img src={exam.imageURL} alt="avatar" style={{ width: '200px', height: '200px' }} />
               </div>
               <div >
                 <p>
