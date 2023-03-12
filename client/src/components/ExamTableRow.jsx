@@ -54,6 +54,6 @@ export default class ExamTableRow extends React.Component {
           </td>
         )}
       </tr>
-    );
+    ];
   }
 }
