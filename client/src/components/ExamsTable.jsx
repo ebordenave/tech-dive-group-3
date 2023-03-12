@@ -21,7 +21,7 @@ export default class ExamsTable extends React.Component {
   
   componentDidMount() {
     // Fetch data from the server and set state with response data
-    fetch('http://localhost:9000/exams/')
+    fetch('https://group-three-tech-dive.onrender.com/exams/')
       .then(response => response.json())
       .then(data => {
         console.log(data);
