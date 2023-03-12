@@ -29,7 +29,8 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Use middleware to set up logging, CORS, JSON and URL encoded request bodies, and cookie parsing
 app.use(logger('dev'));
-app.use(cors());
+//this may need to change here
+app.use(cors({origin:["https://group-three-tech-dive-api.onrender.com","https://group-three-tech-dive.onrender.com"]}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

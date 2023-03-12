@@ -40,7 +40,7 @@ function ExamForm() {
 
     try {
       // send form data to the server using the fetch API
-      const response = await fetch('http://localhost:9000/exams/create/', {
+      const response = await fetch('https://localhost:9000/exams/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
