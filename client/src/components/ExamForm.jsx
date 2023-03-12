@@ -40,7 +40,7 @@ function ExamForm() {
 
     try {
       // send form data to the server using the fetch API
-      const response = await fetch('https://group-three-tech-dive.onrender.com/exams/create/', {
+      const response = await fetch('http://localhost:9000/exams/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ function ExamForm() {
             {errorMsg && <div className="error-msg">{errorMsg}</div>}
             <br />
             <div className="form-group">
-            <h4 style={{textAlign: 'center', fontFamily: 'Arial'}}>Create Exam Form</h4>
+            <h4 style={{textAlign: 'center', fontFamily: 'Arial'}}>Create Exam</h4>
               <div className='form-field'>
                 <input type="text" name="patientId" value={examData.patientId} onChange={handleChange} placeholder={'Patient ID'}/>
               </div>
