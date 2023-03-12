@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Define API root URL
-const API_ROOT = 'https://group-three-tech-dive.onrender.com/';
+const API_ROOT = 'http://localhost:9000';
 
 // Custom hook to make API requests and return response, isLoading and error states
 export function useApi({ path } = { path: '' }) {
