@@ -4,7 +4,9 @@ import ExamTableRow from './ExamTableRow.jsx';
 import ReactPaginate from 'react-paginate';
 
 // added const to be used as a module rather than hardcoded in multiple places
-export const apiUrl = 'http://localhost:9000'
+export const apiUrl = 'https://group-three-tech-dive-api.onrender.com'
+// https://group-three-tech-dive-api.onrender.com
+// 127.0.0.1
 
 
 export default class ExamsTable extends React.Component {
