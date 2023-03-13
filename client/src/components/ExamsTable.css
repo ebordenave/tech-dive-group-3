@@ -69,9 +69,15 @@ for custom scrollbar for webkit browser
   }
 
   .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    align-self: center;
   }
   
   .pages {
@@ -91,4 +97,11 @@ for custom scrollbar for webkit browser
   .active {
     font-weight: bold;
   }
+
+  .pagination a.active {
+    background-color: #46c1fa;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #46c1fa;}
   
