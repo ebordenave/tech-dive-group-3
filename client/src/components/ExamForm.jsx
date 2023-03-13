@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ExamForm.css';
-import apiUrl from './ExamsTable';
+import { apiUrl } from './ExamsTable';
 
 function ExamForm() {
   // initialize state with all form fields as empty strings

@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExamsTable.css';
-import apiUrl from './ExamsTable'
+import { apiUrl } from './ExamsTable'
 
 export default class PatientDetailsTable extends React.Component {
   state = {
