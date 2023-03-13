@@ -39,8 +39,8 @@ export default class ExamTableRow extends React.Component {
 
     return (
       <tr key="main" onMouseEnter={() => this.toggleDeleteButton(true)} onMouseLeave={() => this.toggleDeleteButton(false)}>
-        <td><Link to={`${apiUrl}/${exam.patientId}`}>{exam.patientId}</Link></td>
-        <td><Link to={`http://localhost:9000/exams/${exam.examId}`}>{exam.examId}</Link></td>
+        <td><Link to={`${apiUrl}/patient/${exam.patientId}`}>{exam.patientId}</Link></td>
+        <td><Link to={`${apiUrl}/exams/${exam.examId}`}>{exam.examId}</Link></td>
         <td><img src={exam.imageURL} width={48} alt="avatar" /></td>
         <td>{exam.keyFindings}</td>
         <td>{exam.brixiaScores}</td>
