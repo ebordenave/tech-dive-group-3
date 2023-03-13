@@ -42,7 +42,7 @@ export default class ExamTableRow extends React.Component {
         <td><Link to={`${apiUrl}/patient/${exam.patientId}`}>{exam.patientId}</Link></td>
         <td><Link to={`${apiUrl}/exams/${exam.examId}`}>{exam.examId}</Link></td>
         <td><img src={exam.imageURL} width={48} alt="avatar" /></td>
-        <td>{exam.keyFindings}</td>
+        <td>{exam.keyFindings.slice(0, 100)}...</td>
         <td>{exam.brixiaScores}</td>
         <td>{exam.age}</td>
         <td>{exam.sex}</td>
