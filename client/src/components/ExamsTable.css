@@ -67,3 +67,41 @@ for custom scrollbar for webkit browser
     top: 0;
     background-color: #46c1fa;
   }
+
+  .pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    align-self: center;
+  }
+  
+  .pages {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .pages li {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+
+  .pagination a.active {
+    background-color: #46c1fa;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #46c1fa;}
+  
