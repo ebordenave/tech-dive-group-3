@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+// added apiUrl from ExamsTable.jsx
+import apiUrl from './ExamsTable'
+
+
 export default class ExamTableRow extends React.Component {
   state = { showDeleteButton: false, loading: false }
 
@@ -10,7 +14,7 @@ export default class ExamTableRow extends React.Component {
 
   handleDelete = () => {
     this.setState({ loading: true });
-    fetch(`http://localhost:9000/exams/${this.props.exam.examId}`, {
+    fetch(`${apiUrl}/exams/${this.props.exam.examId}`, {
       method: 'DELETE',
     })
     .then(response => response.json())

@@ -3,6 +3,10 @@ import './ExamsTable.css';
 import ExamTableRow from './ExamTableRow.jsx';
 import ReactPaginate from 'react-paginate';
 
+// added const to be used as a module rather than hardcoded in multiple places
+const apiUrl = 'http://localhost:9000'
+
+
 export default class ExamsTable extends React.Component {
   // Initialize state with exams and error
   state = {
@@ -21,7 +25,7 @@ export default class ExamsTable extends React.Component {
   
   componentDidMount() {
     // Fetch data from the server and set state with response data
-    fetch('https://localhost:9000/exams/')
+    fetch(`${apiUrl}/exams/`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
