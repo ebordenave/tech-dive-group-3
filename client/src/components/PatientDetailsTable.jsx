@@ -1,6 +1,6 @@
 import React from 'react';
 import './ExamsTable.css';
-// import ExamTableRow from './ExamTableRow.jsx';
+import { apiUrl } from './ExamsTable'
 
 export default class PatientDetailsTable extends React.Component {
   state = {
@@ -9,7 +9,7 @@ export default class PatientDetailsTable extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`http://localhost:9000/patient/${this.props.patientId}`)
+    fetch(`${apiUrl}/app/patient/${this.props.patientId}`)
       .then(response => response.json())
       .then(data => {
         console.log(data);

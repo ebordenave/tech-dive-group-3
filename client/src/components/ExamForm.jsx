@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './ExamForm.css'
+import './ExamForm.css';
+import { apiUrl } from './ExamsTable';
 
 function ExamForm() {
   // initialize state with all form fields as empty strings
@@ -40,7 +41,7 @@ function ExamForm() {
 
     try {
       // send form data to the server using the fetch API
-      const response = await fetch('https://localhost:9000/exams/create/', {
+      const response = await fetch(`${apiUrl}/exams/create/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
