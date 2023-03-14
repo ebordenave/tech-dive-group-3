@@ -21,21 +21,23 @@ for custom scrollbar for webkit browser
   .table-container {
     margin: auto;
     padding: 0;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #068cca;
     border-radius: 5px;
   }
   
-  tr.expandable > td > .inner {
-    margin: 15px;
-    min-height: fit-content;
-    overflow: hidden;
+  td {
+    text-align: center;
+    vertical-align: middle;
   }
   
   .uk-table {
-    min-width: 100vw;
+    width: 75%;
     margin: auto;
   }
-
+/* below here is good */
+.uk-table tbody tr {
+  border: 1px solid #e5e5e5;
+}
   .uk-table tbody tr:nth-child(even) {
     background-color: #f2f2f2;
   }
@@ -59,17 +61,19 @@ for custom scrollbar for webkit browser
   .ExamsTable-container {
     height: 400px; 
     overflow-y: scroll;
-    overflow-x: scroll;
+    overflow-x: hidden;
   }
 
   .ExamsTable-container table thead {
     position: sticky;
     top: 0;
     background-color: #46c1fa;
+    height: 50px
   }
 
   .pagination {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
   }
   
   .pagination a {
