@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import { apiUrl } from '../components/ExamsTable'
 
 // Define API root URL
-const API_ROOT = 'https://localhost:9000';
+// const API_ROOT = 'https://localhost:9000';
 
 // Custom hook to make API requests and return response, isLoading and error states
 export function useApi({ path } = { path: '' }) {
@@ -12,7 +13,7 @@ export function useApi({ path } = { path: '' }) {
 
   useEffect(() => {
     // Make API request and update state based on response
-    fetch(`${API_ROOT}/${path}`)
+    fetch(`${apiUrl}/${path}`)
       .then(res => res.json()) // convert response to JSON
       .then(res => setResponse(res)) // set response state
       .catch(error => setError(error)) // set error state
